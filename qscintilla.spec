@@ -2,14 +2,17 @@
 Summary:	QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class
 Summary(pl):	QScintilla jest portem do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla	
-Version:	1.49
-Release:	1
+Version:	1.53
+%define sub_ver 1.1
+Release:	0.1
 License:	GPL
 Group:		X11/Libraries
-Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{version}-x11-gpl-0.3.tar.gz
+Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{version}-x11-gpl-%{sub_ver}.tar.gz
+# Source0-md5:	1ad51e9e77a6b5213e7119b5ded56cf4
+#               http://www.river-bank.demon.co.uk/download/QScintilla/qscintilla-1.53-x11-gpl-1.1.tar.gz
 URL:		http://www.riverbankcomputing.co.uk/qscintilla/index.php
 BuildRequires:	qt-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-x11-gpl-0.3-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-x11-gpl-%{sub_ver}-root-%(id -u -n)
 
 %define _prefix         /usr/X11R6
 
@@ -34,14 +37,14 @@ Pakiet tem zawiera pliki nag³ówkowe potrzebne do tworzenia i
 kompilacji aplikacji korzystaj±cych z biblioteki QScintilla.
 
 %prep
-%setup -q -n %{name}-%{version}-x11-gpl-0.3
+%setup -q -n %{name}-%{version}-x11-gpl-%{sub_ver}
 
 %build
 QTDIR=%{_prefix}
 export QTDIR
 cd qt
 qmake -o Makefile -after DESTDIR=tmp/ qscintilla.pro
-#Potrzebna latka usuwajaca/przenoszaca z Makefile -  all: to co powinno znalezc sie w install:
+#TODO: Potrzebna latka usuwajaca/przenoszaca z Makefile -  all: to co powinno znalezc sie w install:
 %{__make}
 
 %install
