@@ -1,10 +1,11 @@
+# TODO: ld/Qt master check if qscintilla.so ends in proper place 
 %include        /usr/lib/rpm/macros.python
 Summary:	QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class
 Summary(pl):	QScintilla jest portem do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla	
 Version:	1.53
 %define sub_ver 1.1
-Release:	1
+Release:	1.91
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{version}-x11-gpl-%{sub_ver}.tar.gz
@@ -53,7 +54,12 @@ install -d $RPM_BUILD_ROOT%{_includedir}/qt \
 	$RPM_BUILD_ROOT%{_examplesdir}/qt/%{name} \
 	$RPM_BUILD_ROOT%{_libdir}/qt
 
-install qt/tmp/libqscintilla.so* $RPM_BUILD_ROOT%{_libdir}/qt
+# install qt/tmp/libqscintilla.so* $RPM_BUILD_ROOT%{_libdir}/qt
+# Above is not good. Copies of so are installed instead of links
+# also {_libdir}/qt is not in scope of ldconfig
+# I'm not sure if below is right FIXME.
+# At least python-PyQt looks for libqscintilla.so in %{_libdir}/qt
+install qt/tmp/libqscintilla.so.*.*.* $RPM_BUILD_ROOT%{_libdir}/qt
 install qt/qextscintilla*.h $RPM_BUILD_ROOT%{_includedir}/qt
 install qt/qscintilla*.qm $RPM_BUILD_ROOT%{_examplesdir}/qt/%{name}
 
