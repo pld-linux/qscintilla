@@ -2,12 +2,14 @@
 Summary:	QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class
 Summary(pl):	QScintilla jest portem do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla	
-Version:	1.53
-Release:	2
+Version:	1.2
+%define	scintilla_ver	1.54
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		X11/Libraries
-Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{version}-x11-gpl-1.1.tar.gz
-# Source0-md5:	1ad51e9e77a6b5213e7119b5ded56cf4
+Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{scintilla_ver}-x11-gpl-%{version}.tar.gz
+# Source0-md5:	a69bf732c40df24c1e57d152cbf25729
 URL:		http://www.riverbankcomputing.co.uk/qscintilla/index.php
 BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-x11-gpl-0.3-root-%(id -u -n)
@@ -33,7 +35,7 @@ Pakiet tem zawiera pliki nag³ówkowe potrzebne do tworzenia i
 kompilacji aplikacji korzystaj±cych z biblioteki QScintilla.
 
 %prep
-%setup -q -n %{name}-%{version}-x11-gpl-1.1
+%setup -q -n %{name}-%{scintilla_ver}-x11-gpl-%{version}
 
 %build
 QTDIR=%{_prefix}
