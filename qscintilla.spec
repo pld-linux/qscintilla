@@ -1,7 +1,7 @@
 %include        /usr/lib/rpm/macros.python
 Summary:	QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class
 Summary(pl):	QScintilla jest portem do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
-Name:		qscintilla	
+Name:		qscintilla
 Version:	1.2
 %define	scintilla_ver	1.54
 Release:	1
