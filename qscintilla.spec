@@ -4,7 +4,7 @@ Summary(pl):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila 
 Name:		qscintilla
 Version:	1.2
 %define	scintilla_ver	1.54
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Libraries
@@ -51,14 +51,15 @@ qmake -o Makefile -after DESTDIR=tmp qscintilla.pro
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_includedir}/qt \
 	$RPM_BUILD_ROOT%{_examplesdir}/qt/%{name} \
-	$RPM_BUILD_ROOT%{_libdir}/qt
-
+	$RPM_BUILD_ROOT%{_libdir}/qt \
+	$RPM_BUILD_ROOT%{_datadir}/locale/de/LC_MESSAGES
+	
 cp -df qt/tmp/libqscintilla.so* $RPM_BUILD_ROOT%{_libdir}
 install qt/qextscintilla*.h $RPM_BUILD_ROOT%{_includedir}/qt
 
 # where should it be placed to be used?
 # README says $QTDIR/translations, but it doesn't exist
-#install qt/qscintilla*.qm $RPM_BUILD_ROOT/???
+install qt/qscintilla_de.qm $RPM_BUILD_ROOT%{_datadir}/locale/de/LC_MESSAGES/qscintilla.qm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -70,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libqscintilla.so.*.*.*
-#%lang(de) ???/qscintilla_de.qm
+%lang(de) %{_datadir}/locale/de/LC_MESSAGES/qscintilla.qm
 
 %files devel
 %doc doc/*
