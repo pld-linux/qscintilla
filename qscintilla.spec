@@ -1,6 +1,6 @@
 %include        /usr/lib/rpm/macros.python
-Summary:	QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class
-Summary(pl):	QScintilla jest portem do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
+Summary:	QScintilla - a port of Neil Hodgson's Scintilla C++ editor class to Qt
+Summary(pl):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla
 Version:	1.2
 %define	scintilla_ver	1.54
@@ -25,6 +25,8 @@ Neila Hodgsona.
 Summary:	Development files for the QScintilla
 Summary(pl):	Pliki nag³ówkowe dla QScintilla
 Group:		X11/Development/Libraries
+Requires:	%{name} = %{epoch}:%{version}
+Requires:	qt-devel
 
 %description devel
 This package contains the header files necessary to develop
@@ -41,7 +43,7 @@ kompilacji aplikacji korzystaj±cych z biblioteki QScintilla.
 QTDIR=%{_prefix}
 export QTDIR
 cd qt
-qmake -o Makefile -after DESTDIR=tmp/ qscintilla.pro
+qmake -o Makefile -after DESTDIR=tmp qscintilla.pro
 #Potrzebna latka usuwajaca/przenoszaca z Makefile -  all: to co powinno znalezc sie w install:
 %{__make}
 
@@ -51,9 +53,12 @@ install -d $RPM_BUILD_ROOT%{_includedir}/qt \
 	$RPM_BUILD_ROOT%{_examplesdir}/qt/%{name} \
 	$RPM_BUILD_ROOT%{_libdir}/qt
 
-install qt/tmp/libqscintilla.so* $RPM_BUILD_ROOT%{_libdir}
+cp -df qt/tmp/libqscintilla.so* $RPM_BUILD_ROOT%{_libdir}
 install qt/qextscintilla*.h $RPM_BUILD_ROOT%{_includedir}/qt
-install qt/qscintilla*.qm $RPM_BUILD_ROOT%{_examplesdir}/qt/%{name}
+
+# where should it be placed to be used?
+# README says $QTDIR/translations, but it doesn't exist
+#install qt/qscintilla*.qm $RPM_BUILD_ROOT/???
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,10 +68,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS README doc/*
-%attr(755,root,root) %{_libdir}/libqscintilla.so
+%doc ChangeLog NEWS README
+%attr(755,root,root) %{_libdir}/libqscintilla.so.*.*.*
+#%lang(de) ???/qscintilla_de.qm
 
 %files devel
+%doc doc/*
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libqscintilla.so
 %{_includedir}/qt/*.h
-%{_examplesdir}/qt/%{name}
