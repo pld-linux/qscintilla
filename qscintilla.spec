@@ -9,11 +9,9 @@ License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{scintilla_ver}-gpl-%{version}.tar.gz
 # Source0-md5:	b12350ab2609b3a5e230330a0d9718aa
-# Source0-size:	700442
 URL:		http://www.riverbankcomputing.co.uk/qscintilla/index.php
 BuildRequires:	qt-devel
-# BuildRoot:	%{tmpdir}/%{name}-%{version}-x11-gpl-0.3-root-%(id -u -n)
-BuildRoot:	%{tmpdir}/%{name}-%{version}-gpl-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class.
