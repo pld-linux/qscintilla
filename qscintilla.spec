@@ -22,7 +22,7 @@ Neila Hodgsona.
 %package devel
 Summary:	Development files for the QScintilla
 Summary(pl):	Pliki nag³ówkowe dla QScintilla
-Group:          X11/Development/Libraries
+Group:		X11/Development/Libraries
 
 %description devel
 This package contains the header files necessary to develop
