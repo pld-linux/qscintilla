@@ -11,6 +11,8 @@ URL:		http://www.riverbankcomputing.co.uk/qscintilla/index.php
 BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-x11-gpl-0.3-root-%(id -u -n)
 
+%define _prefix         /usr/X11R6
+
 %description
 QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class.
 
