@@ -4,7 +4,7 @@ Summary(pl):	QScintilla jest portem do Qt klas C++ edytora Scintilla autorstwa N
 Name:		qscintilla	
 Version:	1.53
 %define sub_ver 1.1
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{version}-x11-gpl-%{sub_ver}.tar.gz
