@@ -10,6 +10,7 @@ Group:		X11/Libraries
 Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{scintilla_ver}-gpl-%{version}.tar.gz
 # Source0-md5:	9e4da4adbf9aac8a802cd73695b9786f
 URL:		http://www.riverbankcomputing.co.uk/qscintilla/index.php
+BuildRequires:	qmake
 BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
