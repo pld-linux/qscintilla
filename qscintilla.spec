@@ -3,7 +3,7 @@ Summary(pl):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila 
 Name:		qscintilla
 Version:	1.2
 %define	scintilla_ver	1.54
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Libraries
@@ -24,7 +24,7 @@ Neila Hodgsona.
 Summary:	Development files for the QScintilla
 Summary(pl):	Pliki nag³ówkowe dla QScintilla
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	qt-devel
 
 %description devel
@@ -73,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/locale/de/LC_MESSAGES/qscintilla.qm
 
 %files devel
-%doc doc/*
 %defattr(644,root,root,755)
+%doc doc/*
 %attr(755,root,root) %{_libdir}/libqscintilla.so
 %{_includedir}/qt/*.h
