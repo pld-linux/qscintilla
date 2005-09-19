@@ -1,14 +1,14 @@
 Summary:	QScintilla - a port of Neil Hodgson's Scintilla C++ editor class to Qt
 Summary(pl):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla
-Version:	1.5.1
-%define	scintilla_ver	1.62
+Version:	1.6
+%define	scintilla_ver	1.65
 Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	http://www.river-bank.demon.co.uk/download/QScintilla/%{name}-%{scintilla_ver}-gpl-%{version}.tar.gz
-# Source0-md5:	9e4da4adbf9aac8a802cd73695b9786f
+# Source0-md5:	8dbebef07cd2c934fbec3ee1bdfecfa3
 URL:		http://www.riverbankcomputing.co.uk/qscintilla/index.php
 BuildRequires:	qmake
 BuildRequires:	qt-devel
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_includedir}/qt \
 	$RPM_BUILD_ROOT%{_examplesdir}/qt/%{name} \
 	$RPM_BUILD_ROOT%{_libdir}/qt \
-	$RPM_BUILD_ROOT%{_datadir}/locale/{de,fr,ru}/LC_MESSAGES
+	$RPM_BUILD_ROOT%{_datadir}/locale/{de,fr,pt_BR,ru}/LC_MESSAGES
 	
 cp -df qt/tmp/libqscintilla.so* $RPM_BUILD_ROOT%{_libdir}
 install qt/qextscintilla*.h $RPM_BUILD_ROOT%{_includedir}/qt
@@ -61,6 +61,7 @@ install qt/qextscintilla*.h $RPM_BUILD_ROOT%{_includedir}/qt
 # README says $QTDIR/translations, but it doesn't exist
 install qt/qscintilla_de.qm $RPM_BUILD_ROOT%{_datadir}/locale/de/LC_MESSAGES/qscintilla.qm
 install qt/qscintilla_fr.qm $RPM_BUILD_ROOT%{_datadir}/locale/fr/LC_MESSAGES/qscintilla.qm
+install qt/qscintilla_ptbr.qm $RPM_BUILD_ROOT%{_datadir}/locale/pt_BR/LC_MESSAGES/qscintilla.qm
 install qt/qscintilla_ru.qm $RPM_BUILD_ROOT%{_datadir}/locale/ru/LC_MESSAGES/qscintilla.qm
 
 %clean
@@ -75,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libqscintilla.so.*.*.*
 %lang(de) %{_datadir}/locale/de/LC_MESSAGES/qscintilla.qm
 %lang(fr) %{_datadir}/locale/fr/LC_MESSAGES/qscintilla.qm
+%lang(pt_BR) %{_datadir}/locale/pt_BR/LC_MESSAGES/qscintilla.qm
 %lang(ru) %{_datadir}/locale/ru/LC_MESSAGES/qscintilla.qm
 
 %files devel
