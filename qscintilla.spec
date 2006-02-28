@@ -1,8 +1,8 @@
+%define	scintilla_ver	1.65
 Summary:	QScintilla - a port of Neil Hodgson's Scintilla C++ editor class to Qt
 Summary(pl):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla
 Version:	1.6
-%define	scintilla_ver	1.65
 Release:	1
 Epoch:		1
 License:	GPL v2
@@ -53,7 +53,7 @@ install -d $RPM_BUILD_ROOT%{_includedir}/qt \
 	$RPM_BUILD_ROOT%{_examplesdir}/qt/%{name} \
 	$RPM_BUILD_ROOT%{_libdir}/qt \
 	$RPM_BUILD_ROOT%{_datadir}/locale/{de,fr,pt_BR,ru}/LC_MESSAGES
-	
+
 cp -df qt/tmp/libqscintilla.so* $RPM_BUILD_ROOT%{_libdir}
 install qt/qextscintilla*.h $RPM_BUILD_ROOT%{_includedir}/qt
 
