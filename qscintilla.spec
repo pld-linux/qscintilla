@@ -1,7 +1,7 @@
 # TODO: Consider renaming to QScintilla1 ?
 %define	scintilla_ver	1.71
 Summary:	QScintilla - a port of Neil Hodgson's Scintilla C++ editor class to Qt
-Summary(pl):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
+Summary(pl.UTF-8):   QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla
 Version:	1.7.1
 Release:	1
@@ -19,13 +19,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class.
 
-%description -l pl
+%description -l pl.UTF-8
 QScintilla jest portem do Qt klas C++ edytora Scintilla autorstwa
 Neila Hodgsona.
 
 %package devel
 Summary:	Development files for the QScintilla
-Summary(pl):	Pliki nag≥Ûwkowe dla QScintilla
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla QScintilla
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	qt-devel
@@ -34,9 +34,9 @@ Requires:	qt-devel
 This package contains the header files necessary to develop
 applications using QScintilla - header files.
 
-%description devel -l pl
-Pakiet tem zawiera pliki nag≥Ûwkowe potrzebne do tworzenia i
-kompilacji aplikacji korzystaj±cych z biblioteki QScintilla.
+%description devel -l pl.UTF-8
+Pakiet tem zawiera pliki nag≈Ç√≥wkowe potrzebne do tworzenia i
+kompilacji aplikacji korzystajƒÖcych z biblioteki QScintilla.
 
 %prep
 %setup -q -n QScintilla-%{scintilla_ver}-gpl-%{version}
