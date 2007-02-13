@@ -1,7 +1,7 @@
 # TODO: Consider renaming to QScintilla1 ?
 %define	scintilla_ver	1.71
 Summary:	QScintilla - a port of Neil Hodgson's Scintilla C++ editor class to Qt
-Summary(pl.UTF-8):   QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
+Summary(pl.UTF-8):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla
 Version:	1.7.1
 Release:	1
@@ -25,7 +25,7 @@ Neila Hodgsona.
 
 %package devel
 Summary:	Development files for the QScintilla
-Summary(pl.UTF-8):   Pliki nagłówkowe dla QScintilla
+Summary(pl.UTF-8):	Pliki nagłówkowe dla QScintilla
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	qt-devel
