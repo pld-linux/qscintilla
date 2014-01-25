@@ -1,3 +1,7 @@
+#
+# TODO:
+#	- fix building with qscintilla2(-devel) installed, remove BC
+#
 %define	scintilla_ver	1.71
 Summary:	QScintilla - a port of Neil Hodgson's Scintilla C++ editor class to Qt
 Summary(pl.UTF-8):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
@@ -12,6 +16,7 @@ Source0:	http://www.riverbankcomputing.com/Downloads/QScintilla1/QScintilla-%{sc
 URL:		http://www.riverbankcomputing.co.uk/qscintilla/index.php
 BuildRequires:	qmake
 BuildRequires:	qt-devel >= 3.0
+BuildConflicts:	qscintilla2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
