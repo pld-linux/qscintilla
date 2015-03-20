@@ -3,7 +3,7 @@ Summary:	QScintilla - a port of Neil Hodgson's Scintilla C++ editor class to Qt
 Summary(pl.UTF-8):	QScintilla - port do Qt klas C++ edytora Scintilla autorstwa Neila Hodgsona
 Name:		qscintilla
 Version:	1.7.1
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2
 Group:		X11/Libraries
